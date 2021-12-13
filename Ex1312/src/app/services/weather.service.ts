@@ -17,6 +17,8 @@ export class WeatherService {
     .set('q', city)
     .set ('appId', 'b640bd58f541be2cc9af89591628db05')
     .set('lang', 'it')
+
+    
     return this.http.get<Weather>(environment.apiUrl, { params })
   }
 

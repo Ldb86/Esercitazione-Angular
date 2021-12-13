@@ -3,7 +3,7 @@ export interface Weather {
  main: {
  temp: number;
  };
- dt: number |"13/dec/2021";
+ dt: string;
  sys: {
  country: string;
 };
@@ -12,6 +12,6 @@ name: string;
 
 interface WeatherInfo {
  main: string;
- dt: number;
+ dt: string;
  icon: string;
 } 

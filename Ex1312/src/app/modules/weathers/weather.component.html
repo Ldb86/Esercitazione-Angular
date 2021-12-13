@@ -1,0 +1,25 @@
+<h1>Weather App</h1>
+<br>
+<h2>La tua citta', e le tue previsioni adesso</h2>
+<br>
+<h3>Previsioni Correnti</h3>
+
+<div> City
+    <input type="text" [(ngModel)]="city">
+    <button class="btn-primary" (click)="search(city)">Search</button>
+</div>
+<div class="card" *ngIf="weather">
+    <h2>{{weather.name}},
+        {{weather.sys.country}}
+        {{weather.dt |date: "dd/MMM/yyyy" }},
+        </h2>
+        <sub>{{weather.weather[0].main}}</sub>
+        <img src="https://openweathermap.org/img/wn/{{weather.weather[0].icon}}@2x.png"
+        [alt]="weather.weather[0].main">
+        <div class="content">
+            <h1>{{weather.main.temp | number:'1.0-0'}} &#8451;</h1>
+        </div>
+</div>
+
+
+<!-- {{weather | json}} -->
